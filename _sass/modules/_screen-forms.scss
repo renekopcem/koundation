@@ -19,16 +19,13 @@ fieldset,
 
 legend {
     padding: 5px 0 15px;
-    border-bottom: 1px solid #d9dee5;
     width: 100%;
     font-size: 18px;
-    color: #59646e;
 }
 
 .legend {
     padding: 10px 0 0;
     margin: 0 0 15px;
-    border-bottom: 1px solid #d9dee5;
 
     .title {
         font-size: 18px;
@@ -42,7 +39,6 @@ legend {
 
 label,
 .label {
-    color: #626976;
     font-weight: bold;
     display: block;
     line-height: 25px;
@@ -59,7 +55,6 @@ h3.required {
 
 .input-text {
     margin-top: 8px;
-    color: #588BC2;
     font-weight: normal;
 }
 
@@ -115,17 +110,11 @@ h3.required {
 .btn {
     margin: 0;
     font-size: 12px;
-    font-weight: bold;
-    font-style: italic;
-    color: #ffffff;
-    padding: 0 35px 0 15px;
+    padding: 5px;
     text-decoration: none;
-    background: #ff3c3c url('i/l-btn.png') no-repeat 90% center;
-    line-height: 40px;
+    line-height: 20px;
 
-    @include border-box;
     @include inline-block;
-    @include border-radius(3px);
 
     &:hover {
         cursor: pointer;
@@ -138,7 +127,7 @@ button {
     height: 32px;
 }
 
-// FIX pro Firefox a jeho line-height
+// FIX for Firefox and its line-height
 ::-moz-focus-inner {
     padding:0;
     border:0;
@@ -146,8 +135,8 @@ button {
 
 a.btn,
 span.btn {
-    line-height: 40px;
-    height: 40px;
+    line-height: 20px;
+    height: 20px;
 }
 
 .btn-inline {
@@ -155,17 +144,9 @@ span.btn {
 }
 
 .btn.disabled {
-    color: #D4D6D9;
-    background: #f9f9f9;
-    border-color: #d1d1d1;
-
-    @include box-shadow(none);
 
     &:hover {
-        cursor: auto;
 
-        background-position: 0 0;
-        @include box-shadow(none);
     }
 }
 
@@ -182,44 +163,21 @@ input[type="text"].sml {
 .btn-primary {
     @extend .btn;
 
-    color: #30536e;
-    border: 1px solid $input-hover-color;
-    background-color: #81bff0;
-
-    @include background-image(linear-gradient(#afd7f6, #81bff0));
 }
 
 .btn-danger {
     @extend .btn;
 
-    color: #fff;
-    border: 1px solid #BD362F;
-    background-color: #BD362F;
-
-    @include text-shadow(rgba(0, 0, 0, 0.3) 0 1px 1px);
-    @include background-image(linear-gradient(#EE5F5B, #BD362F));
 }
 
 .btn-add {
     @extend .btn;
 
-    border-color: #72952b;
-    color: #ffffff;
-    background-color: #72a329;
-
-    @include text-shadow(rgba(0, 0, 0, 0.4) 0 1px 1px);
-    @include background-image(linear-gradient(#a6c95d, #72a329));
 }
 
 .btn-important {
     @extend .btn;
 
-    border-color: #9F7000;
-    color: #ffffff;
-    background-color: #FBB01B;
-
-    @include text-shadow(rgba(0, 0, 0, 0.4) 0 1px 1px);
-    @include background-image(linear-gradient(#D89800, #E5B800));
 }
 
 
@@ -230,26 +188,24 @@ input[type="text"].sml {
 input[type="text"],
 input[type="password"],
 textarea {
-    font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #b6c0cd;
     line-height: 20px;
     padding: 5px 10px;
     color: #626976;
-    //margin: 0 5px 0 0;
+    margin: 0 5px 0 0;
 
     @include transition-property(box-shadow);
     @include transition-duration(800ms);
     @include border-radius(3px);
 
-    @include border-box;
-
     &:hover {
-        border-color: $input-hover-color;
+        border-color: gray;
     }
 
     &:focus {
         outline: 0;
-        border-color: $input-hover-color;
+        border-color: gray;
+
         @include box-shadow(rgba(126, 181, 234, 0.8) 0px 0px 5px 0px);
     }
     &.sys-form-error {

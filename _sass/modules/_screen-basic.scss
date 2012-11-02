@@ -7,17 +7,16 @@
 // ==========================================================================
 
 body {
-    font: 14px/1.5 Georgia, Times, "Times New Roman", serif;
+    //font: 14px/1.5 Georgia, Times, "Times New Roman", serif;
     text-align: center;
-    color: #555555;
+    //color: #555555;
 }
 
 a {
-    color: #555555;
+    //color: #555555;
 }
 
 h1 {
-    font-size: 18px;
 
     &.title {
         margin: 0 0 5px;
@@ -25,7 +24,6 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
 
     &.title {
         margin: 0 0 15px;
@@ -33,7 +31,6 @@ h2 {
 }
 
 h3 {
-    font-size: 14px;
 
     &.title {
         margin: 0 0 10px;
@@ -41,8 +38,6 @@ h3 {
 }
 
 h4 {
-    font-size: 13px;
-    font-weight: bold;
 
     &.title {
         margin: 0 0 10px;
@@ -114,24 +109,16 @@ img.right {
     margin-bottom: 10px;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
 .t-right {
-    text-align: right;
+    @extend .text-right;
 }
 
 .t-left {
-    text-align: left;
+    @extend .text-left;
 }
 
 .t-center {
-    text-align: center;
+    @extend .text-center;
 }
 
 .hidden {
@@ -160,15 +147,5 @@ img.right {
 }
 
 .group {
-    zoom: 1;
-
-    &:before {
-        content: "";
-        display: table;
-    }
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+    @include clearfix();
 }
