@@ -1,0 +1,271 @@
+// ==========================================================================
+// Title:        Forms
+// ==========================================================================
+
+// ==========================================================================
+// =errors
+// ==========================================================================
+
+
+// ==========================================================================
+// =basic
+// ==========================================================================
+
+fieldset,
+.fieldset {
+    padding: 15px 0 0;
+    margin: 0 0 25px;
+}
+
+legend {
+    padding: 5px 0 15px;
+    border-bottom: 1px solid #d9dee5;
+    width: 100%;
+    font-size: 18px;
+    color: #59646e;
+}
+
+.legend {
+    padding: 10px 0 0;
+    margin: 0 0 15px;
+    border-bottom: 1px solid #d9dee5;
+
+    .title {
+        font-size: 18px;
+    }
+    label {
+        &:after {
+            content: "";
+        }
+    }
+}
+
+label,
+.label {
+    color: #626976;
+    font-weight: bold;
+    display: block;
+    line-height: 25px;
+}
+
+label,
+.label,
+h3.required {
+    &.required:after {
+        color: red;
+        content: " *";
+    }
+}
+
+.input-text {
+    margin-top: 8px;
+    color: #588BC2;
+    font-weight: normal;
+}
+
+// ==========================================================================
+// =layout
+// ==========================================================================
+
+.buttons {
+    padding: 10px 0 10px;
+    line-height: 30px;
+
+    .btn {
+        margin-left: 5px;
+    }
+    &.buttons-left .btn {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+}
+
+.no-label {
+    padding: 25px 0 0;
+    line-height: 32px;
+}
+
+.label-inline {
+    label {
+        display: inline;
+    }
+}
+
+.label-colon {
+    label:after {
+        content: ":";
+    }
+}
+
+.field {
+    margin: 0 0 7px;
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+}
+
+
+// ==========================================================================
+// =buttons
+// ==========================================================================
+
+.btn {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ffffff;
+    padding: 0 35px 0 15px;
+    text-decoration: none;
+    background: #ff3c3c url('i/l-btn.png') no-repeat 90% center;
+    line-height: 40px;
+
+    @include border-box;
+    @include inline-block;
+    @include border-radius(3px);
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+   }
+}
+
+input[type="submit"],
+button {
+    height: 32px;
+}
+
+// FIX pro Firefox a jeho line-height
+::-moz-focus-inner {
+    padding:0;
+    border:0;
+}
+
+a.btn,
+span.btn {
+    line-height: 40px;
+    height: 40px;
+}
+
+.btn-inline {
+    margin-left: 5px;
+}
+
+.btn.disabled {
+    color: #D4D6D9;
+    background: #f9f9f9;
+    border-color: #d1d1d1;
+
+    @include box-shadow(none);
+
+    &:hover {
+        cursor: auto;
+
+        background-position: 0 0;
+        @include box-shadow(none);
+    }
+}
+
+input[type="submit"].btn-sml,
+button.btn-sml,
+a.btn-sml,
+span.btn-sml,
+input[type="text"].sml {
+    line-height: 22px;
+    height: 24px;
+    padding: 0 10px;
+}
+
+.btn-primary {
+    @extend .btn;
+
+    color: #30536e;
+    border: 1px solid $input-hover-color;
+    background-color: #81bff0;
+
+    @include background-image(linear-gradient(#afd7f6, #81bff0));
+}
+
+.btn-danger {
+    @extend .btn;
+
+    color: #fff;
+    border: 1px solid #BD362F;
+    background-color: #BD362F;
+
+    @include text-shadow(rgba(0, 0, 0, 0.3) 0 1px 1px);
+    @include background-image(linear-gradient(#EE5F5B, #BD362F));
+}
+
+.btn-add {
+    @extend .btn;
+
+    border-color: #72952b;
+    color: #ffffff;
+    background-color: #72a329;
+
+    @include text-shadow(rgba(0, 0, 0, 0.4) 0 1px 1px);
+    @include background-image(linear-gradient(#a6c95d, #72a329));
+}
+
+.btn-important {
+    @extend .btn;
+
+    border-color: #9F7000;
+    color: #ffffff;
+    background-color: #FBB01B;
+
+    @include text-shadow(rgba(0, 0, 0, 0.4) 0 1px 1px);
+    @include background-image(linear-gradient(#D89800, #E5B800));
+}
+
+
+// ==========================================================================
+// =inputs
+// ==========================================================================
+
+input[type="text"],
+input[type="password"],
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #b6c0cd;
+    line-height: 20px;
+    padding: 5px 10px;
+    color: #626976;
+    //margin: 0 5px 0 0;
+
+    @include transition-property(box-shadow);
+    @include transition-duration(800ms);
+    @include border-radius(3px);
+
+    @include border-box;
+
+    &:hover {
+        border-color: $input-hover-color;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: $input-hover-color;
+        @include box-shadow(rgba(126, 181, 234, 0.8) 0px 0px 5px 0px);
+    }
+    &.sys-form-error {
+        border-color: #eda1a1;
+    }
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 32px;
+}
+
+input[type="text"][disabled="disabled"] ,
+input[type="password"][disabled="disabled"],
+textarea[disabled="disabled"] {
+    border: 1px solid #CCCCCC;
+
+    @include box-shadow(none);
+}

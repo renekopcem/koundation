@@ -1,0 +1,174 @@
+// ==========================================================================
+// Title:        Basic
+// ==========================================================================
+
+// ==========================================================================
+// =global
+// ==========================================================================
+
+body {
+    font: 14px/1.5 Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    color: #555555;
+}
+
+a {
+    color: #555555;
+}
+
+h1 {
+    font-size: 18px;
+
+    &.title {
+        margin: 0 0 5px;
+    }
+}
+
+h2 {
+    font-size: 24px;
+
+    &.title {
+        margin: 0 0 15px;
+    }
+}
+
+h3 {
+    font-size: 14px;
+
+    &.title {
+        margin: 0 0 10px;
+    }
+}
+
+h4 {
+    font-size: 13px;
+    font-weight: bold;
+
+    &.title {
+        margin: 0 0 10px;
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e8edee;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+
+// ==========================================================================
+// =layout
+// ==========================================================================
+
+.container-wrap {
+
+}
+
+.header {
+
+}
+
+.nav {
+
+}
+
+.section {
+    .main {
+
+    }
+    .aside {
+
+    }
+}
+
+
+.footer {
+
+}
+
+
+// ==========================================================================
+// =misc
+// ==========================================================================
+
+img.left {
+    margin-top: 1em;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+img.right {
+    margin-top: 1em;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.centered-wrapper {
+    text-align: center;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; /* Adjusts for spacing */
+    }
+}
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.group {
+    zoom: 1;
+
+    &:before {
+        content: "";
+        display: table;
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
