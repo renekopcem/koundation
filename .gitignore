@@ -163,4 +163,5 @@ pip-log.txt
 .DS_Store
 
 # SASS & COMPASS
-.sass-cache
+*.sass-cache
+*.css
