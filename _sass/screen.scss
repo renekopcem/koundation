@@ -1,7 +1,5 @@
 @import "compass";
 
-// You custom settings file to override Foundation defaults
-@import "settings";
 
 // Comment out this import if you are customizing you imports below
 //@import "foundation";
@@ -12,6 +10,10 @@
 
 // @import "compass/css3";
 @import "foundation/settings";
+
+// Our custom settings file to override Foundation defaults
+@import "settings";
+
 @import "foundation/functions/all";
 
 // Control which mixins you have access too
@@ -41,12 +43,13 @@
 
 @import "foundation/components/modules/buttons";
 // @import "foundation/components/modules/tabs";
-// @import "foundation/components/modules/ui";
+@import "foundation/components/modules/ui";
 // @import "foundation/components/modules/topbar";
 // @import "foundation/components/modules/navbar";
 // @import "foundation/components/modules/orbit";
 // @import "foundation/components/modules/reveal";
 // @import "foundation/components/modules/offcanvas";
+@import "foundation/components/modules/mqueries";
 
 @import "modules/mixins";
 
