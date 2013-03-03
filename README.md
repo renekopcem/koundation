@@ -7,7 +7,8 @@ This is a default SASS + COMPASS template.
 - Ruby
 - [SASS](http://sass-lang.com/ "SASS")
 - [Compass](http://compass-style.org/ "Compass")
-- [Foundation](http://foundation.zurb.com/ "Foundation")
+- [Foundation 3](http://foundation.zurb.com/ "Foundation 3")
+- [Bundler](http://gembundler.com/ "Bundler")
 
 ## Installation ##
 
