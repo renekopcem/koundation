@@ -1,3 +1,6 @@
+require "rubygems"
+require "bundler/setup"
+
 # Require any additional compass plugins here.
 require 'zurb-foundation'
 
