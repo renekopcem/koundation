@@ -110,15 +110,15 @@ img.right {
 }
 
 .t-right {
-    @extend .text-right;
+    text-align: right;
 }
 
 .t-left {
-    @extend .text-left;
+    text-align: left;    
 }
 
 .t-center {
-    @extend .text-center;
+    text-align: center;
 }
 
 .hidden {
