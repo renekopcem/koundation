@@ -14,6 +14,7 @@ This is a default SASS + COMPASS template. Used by [COEX](http://www.coex.cz/ "C
 
 For installation you need to have installed Ruby and gem Bundler (`gem install bundler`). 
 
+
 Then only clone this repository:
 
 `git clone git://github.com/renekopcem/koundation.git`
