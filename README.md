@@ -1,4 +1,4 @@
-# Welcome to Koudantion #
+# Welcome to Koundation #
 
 This is a default SASS + COMPASS template. Used by [COEX](http://www.coex.cz/ "COEX").
 
