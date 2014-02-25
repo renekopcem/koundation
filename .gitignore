@@ -166,3 +166,6 @@ pip-log.txt
 .sass-cache/
 css/*.css
 *.lock
+
+# BOWER
+bower_components/
