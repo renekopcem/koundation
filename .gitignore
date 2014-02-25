@@ -164,4 +164,5 @@ pip-log.txt
 
 # SASS & COMPASS
 .sass-cache/
-*.css
+css/*.css
+*.lock

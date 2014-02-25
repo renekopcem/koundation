@@ -1,0 +1,25 @@
+// ==========================================================================
+// Title:        Mixins
+// ==========================================================================
+
+@mixin border-box {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// Vertical Align (IE9+) -- http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
