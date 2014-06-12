@@ -63,6 +63,25 @@ module.exports = function(grunt) {
                     hostnameSuffix: ".xip.io"*/
                 }
             }
+        },
+        useminPrepare: {
+            html: '../index.html'
+        },
+        usemin: {
+            html: '../index.html'
+        },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: 'css/i',                   // Src matches are relative to this path
+                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'css/i'                  // Destination path prefix
+                }]
+            }
+        },
+        jshint: {
+            all: ['Gruntfile.js', 'js/*.js']
         }
     });
 
