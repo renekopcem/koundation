@@ -165,7 +165,11 @@ pip-log.txt
 # SASS & COMPASS
 .sass-cache/
 css/*.css
+css/*.map
 *.lock
 
 # BOWER
 bower_components/
+
+# NODE
+node_modules/
