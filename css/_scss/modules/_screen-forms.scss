@@ -196,7 +196,7 @@ textarea {
 
     @include transition-property(box-shadow);
     @include transition-duration(800ms);
-    @include border-radius(3px);
+    border-radius: 3px;
 
     &:hover {
         border-color: gray;
@@ -206,7 +206,7 @@ textarea {
         outline: 0;
         border-color: gray;
 
-        @include box-shadow(rgba(126, 181, 234, 0.8) 0px 0px 5px 0px);
+        box-shadow: rgba(126, 181, 234, 0.8) 0px 0px 5px 0px;
     }
     &.sys-form-error {
         border-color: #eda1a1;
@@ -223,5 +223,5 @@ input[type="password"][disabled="disabled"],
 textarea[disabled="disabled"] {
     border: 1px solid #CCCCCC;
 
-    @include box-shadow(none);
+    box-shadow: none;
 }
