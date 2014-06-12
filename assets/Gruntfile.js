@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            files: 'css/_scss/**/*.scss',
+            files: 'scss/**/*.scss',
             tasks: ['sass:dev']
         },
         sass: {
@@ -31,9 +31,9 @@ module.exports = function(grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    './css/screen.css': './css/_scss/screen.scss',
-                    './css/screen-ie.css': './css/_scss/screen-ie.scss',
-                    './css/print.css': './css/_scss/print.scss'
+                    './css/screen.css': './scss/screen.scss',
+                    './css/screen-ie.css': './scss/screen-ie.scss',
+                    './css/print.css': './scss/print.scss'
                 }
             },
             dev: {
@@ -41,9 +41,9 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    './css/screen.css': './css/_scss/screen.scss',
-                    './css/screen-ie.css': './css/_scss/screen-ie.scss',
-                    './css/print.css': './css/_scss/print.scss'
+                    './css/screen.css': './scss/screen.scss',
+                    './css/screen-ie.css': './scss/screen-ie.scss',
+                    './css/print.css': './scss/print.scss'
                 }
             }
         },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 options: {
                     watchTask: true,
                     server: {
-                        baseDir: '.'
+                        baseDir: '../'
                     }
                     /*,
                     host: 'katipultsandbox.dev.192.168.2.8',
