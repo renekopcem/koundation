@@ -164,12 +164,12 @@ pip-log.txt
 
 # SASS & COMPASS
 .sass-cache/
-css/*.css
-css/*.map
+assets/css/*.css
+assets/css/*.map
 *.lock
 
 # BOWER
-bower_components/
+assets/bower_components/
 
 # NODE
-node_modules/
+assets/node_modules/
