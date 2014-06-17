@@ -1,48 +1,48 @@
 # Welcome to Koundation #
 
-This is a default SASS + COMPASS + Foundation template. Used by [COEX](http://www.coex.cz/ "COEX").
+This is a default libSASS + Foundation + Grunt template. Used by [COEX](http://www.coex.cz/ "COEX").
 
 ## Requirements ##
 
-- Ruby
-- [Bundler](http://gembundler.com/ "Bundler")
-- [SASS](http://sass-lang.com/ "SASS")
-- [Compass](http://compass-style.org/ "Compass")
-- [Foundation 5](http://foundation.zurb.com/ "Foundation 5")
+- [Node.js](http://nodejs.org/ "Node.js")
+- [Grunt](http://gruntjs.com/ "Grunt")
+- [Bower](http://bower.io/ "Bower")
 
 ## Installation ##
 
-For installation you need to have installed Ruby and gem Bundler (`gem install bundler`).
+For installation you need to have installed Node.js, Bower and Grunt.js.
 
 
-Then only clone this repository:
+Download this package:
 
-`git clone git://github.com/renekopcem/koundation.git`
+`https://github.com/renekopcem/koundation/releases`
 
-Install bower components (Foundation SCSS and JS files with dependencies) run this command in root folder:
+Install bower components (Foundation SCSS and JS files with dependencies) run this command in /assets folder:
 
 `bower install`
 
-Install all dependacies by Bundler in /css folder:
+Install all dependencies by Node.js in /assets folder:
 
-`bundle install`
+`npm install`
 
 After that you're ready to use Koundation. Enjoy!
 
 ## Usage ##
 
-In a css folder use command in /css folder:
+In a css folder use command in /assets folder:
 
-`bundle exec compass watch`
+`grunt`
+`grunt watch`
+`grunt build`
+`grunt sass:dev`
+`grunt `
 
-## What's inside? ##
+## Guides to follow ##
 
-Folders:
-
-- **_scss** - used for a sass files
-	- modules - custom modules
-- **f** - used for a custom fonts
-- **i** - used for a images
+[https://github.com/anthonyshort/idiomatic-sass](https://github.com/anthonyshort/idiomatic-sass)
+[https://github.com/north/north#website-building-blocks](https://github.com/north/north#website-building-blocks)
+[http://smacss.com/](http://smacss.com/)
+[http://bem.info/](http://bem.info/)
 
 ## License ##
 
