@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         },
         browserSync: {
             dev: {
-                files: {
+                bsFiles: {
                     src: 'css/screen.css'
                 },
                 options: {
