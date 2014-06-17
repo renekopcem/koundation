@@ -68,7 +68,7 @@ module.exports = function(grunt) {
             }
         },
         usemin: {
-            html: '../index.html'
+            html: '../index.min.html'
         },
         imagemin: {
             dynamic: {
