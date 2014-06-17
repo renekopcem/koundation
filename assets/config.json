@@ -1,0 +1,8 @@
+{
+    "browsersync": {
+        "baseDir": "../",
+        "host": "katipultsandbox.dev.192.168.2.8",
+        "proxy": "katipultsandbox.dev:8888",
+        "hostnameSuffix": ".xip.io"
+    }
+}

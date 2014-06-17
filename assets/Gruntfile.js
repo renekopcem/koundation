@@ -6,14 +6,10 @@ module.exports = function(grunt) {
     // Load all tasks
     require('load-grunt-tasks')(grunt);
 
-    // Variables for project
-    var config = {
-
-    };
-
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        config: grunt.file.readJSON('config.json'),
         watch: {
             files: 'scss/**/*.scss',
             tasks: ['sass:dev']
@@ -55,17 +51,21 @@ module.exports = function(grunt) {
                 options: {
                     watchTask: true,
                     server: {
-                        baseDir: '../'
-                    }
-                    /*,
-                    host: 'katipultsandbox.dev.192.168.2.8',
-                    proxy: 'katipultsandbox.dev:8888',
-                    hostnameSuffix: ".xip.io"*/
+                        baseDir: '<%= config.browsersync.baseDir %>'
+                    }/*
+                    host: '<%= config.browsersync.host %>',
+                    proxy: '<%= config.browsersync.proxy %>',
+                    hostnameSuffix: '<%= config.browsersync.hostnameSuffix %>'
+                    */
                 }
             }
         },
         useminPrepare: {
-            html: '../index.html'
+            html: '../index.html',
+            options: {
+                root: '../',
+                dest: './'
+            }
         },
         usemin: {
             html: '../index.html'
@@ -97,17 +97,47 @@ module.exports = function(grunt) {
                 //concurrency: 4,
                 //progress: true
             }
+        },
+        // Empties folders to start fresh
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        'js/dist',
+                        'css/dist'
+                    ]
+                }]
+            }
+        },
+        copy: {
+            cssimages: {
+                cwd: 'css/i',
+                src: '**',
+                dest: 'css/dist/i/',
+                expand: true
+            },
+            cssfonts: {
+                cwd: 'css/f',
+                src: '**',
+                dest: 'css/dist/f/',
+                expand: true
+            }
         }
     });
 
     // Default task(s).
     grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('build', [
+        'clean:dist',
         'useminPrepare',
         'concat',
         'cssmin',
         'uglify',
-        'filerev',
-        'usemin'
+        //'filerev',
+        'usemin',
+        'copy:cssimages',
+        'copy:cssfonts'
     ]);
 };
