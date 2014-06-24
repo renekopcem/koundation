@@ -11,15 +11,15 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         config: grunt.file.readJSON('config.json'),
         watch: {
-            files: 'scss/**/*.scss',
+            files: '<%= config.scssPath %>/**/*.scss',
             tasks: ['sass:dev']
         },
         sass: {
             options: {
                 includePaths: [
                     require('node-bourbon').includePaths,
-                    './bower_components/sass-list-maps',
-                    './bower_components/foundation/scss'
+                    '<%= config.bowerComponentsPath %>/sass-list-maps',
+                    '<%= config.bowerComponentsPath %>/foundation/scss'
                 ]
             },
             dist: {
@@ -27,9 +27,9 @@ module.exports = function(grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    './css/screen.css': './scss/screen.scss',
-                    './css/screen-ie.css': './scss/screen-ie.scss',
-                    './css/print.css': './scss/print.scss'
+                    '<%= config.cssPath %>/screen.css': '<%= config.scssPath %>/screen.scss',
+                    '<%= config.cssPath %>/screen-ie.css': '<%= config.scssPath %>/screen-ie.scss',
+                    '<%= config.cssPath %>/print.css': '<%= config.scssPath %>/print.scss'
                 }
             },
             dev: {
@@ -37,16 +37,16 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    './css/screen.css': './scss/screen.scss',
-                    './css/screen-ie.css': './scss/screen-ie.scss',
-                    './css/print.css': './scss/print.scss'
+                    '<%= config.cssPath %>/screen.css': '<%= config.scssPath %>/screen.scss',
+                    '<%= config.cssPath %>/screen-ie.css': '<%= config.scssPath %>/screen-ie.scss',
+                    '<%= config.cssPath %>/print.css': '<%= config.scssPath %>/print.scss'
                 }
             }
         },
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: 'css/screen.css'
+                    src: '<%= config.cssPath %>/screen.css'
                 },
                 options: {
                     watchTask: true,
@@ -74,14 +74,14 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,                  // Enable dynamic expansion
-                    cwd: 'css/i',                   // Src matches are relative to this path
+                    cwd: '<%= config.cssPath %>/i',                   // Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'css/i'                  // Destination path prefix
+                    dest: '<%= config.cssPath %>/i'                  // Destination path prefix
                 }]
             }
         },
         jshint: {
-            all: ['Gruntfile.js', 'js/*.js']
+            all: ['Gruntfile.js', '<%= config.jsPath %>/*.js']
         },
         'sftp-deploy': {
             build: {
@@ -105,23 +105,23 @@ module.exports = function(grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        'js/dist',
-                        'css/dist'
+                        '<%= config.jsPath %>/dist',
+                        '<%= config.cssPath %>/dist'
                     ]
                 }]
             }
         },
         copy: {
             cssimages: {
-                cwd: 'css/i',
+                cwd: '<%= config.cssPath %>/i',
                 src: '**',
-                dest: 'css/dist/i/',
+                dest: '<%= config.cssPath %>/dist/i/',
                 expand: true
             },
             cssfonts: {
-                cwd: 'css/f',
+                cwd: '<%= config.cssPath %>/f',
                 src: '**',
-                dest: 'css/dist/f/',
+                dest: '<%= config.cssPath %>/dist/f/',
                 expand: true
             }
         }
