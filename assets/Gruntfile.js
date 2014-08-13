@@ -46,7 +46,10 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: '<%= config.cssPath %>/screen.css'
+                    src: [
+                        '<%= config.cssPath %>/screen.css',
+                        '../*.html'
+                    ]
                 },
                 options: {
                     watchTask: true,
