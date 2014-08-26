@@ -14,7 +14,7 @@
     "tests"
   ],
   "devDependencies": {
-    "foundation": "zurb/bower-foundation#~5.2.3",
+    "foundation": "zurb/bower-foundation#~5.4.0",
     "sass-list-maps": "~0.9.9"
   }
 }
