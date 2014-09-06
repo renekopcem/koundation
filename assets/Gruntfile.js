@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         config: grunt.file.readJSON('config.json'),
         watch: {
             files: '<%= config.scssPath %>/**/*.scss',
-            tasks: ['sass:dev']
+            tasks: ['sass:dev', 'autoprefixer:dev']
         },
         sass: {
             options: {
@@ -41,6 +41,17 @@ module.exports = function(grunt) {
                     '<%= config.cssPath %>/screen-ie.css': '<%= config.scssPath %>/screen-ie.scss',
                     '<%= config.cssPath %>/print.css': '<%= config.scssPath %>/print.scss'
                 }
+            }
+        },
+        autoprefixer: {
+            dev: {
+                options: {
+                    map: true
+                },
+                src: '<%= config.cssPath %>/screen.css'
+            },
+            dist: {
+                src: '<%= config.cssPath %>/screen.css'
             }
         },
         browserSync: {
@@ -134,6 +145,8 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('build', [
         'clean:dist',
+        'sass:dist',
+        'autoprefixer:dist',
         'useminPrepare',
         'concat',
         'cssmin',
