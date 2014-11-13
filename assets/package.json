@@ -5,9 +5,9 @@
   "author": "Roman Klos",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "",
+    "grunt": "~0.4.5",
     "grunt-autoprefixer": "^1.0.1",
-    "grunt-browser-sync": "",
+    "grunt-browser-sync": "~1.5.3",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-copy": "^0.5.0",
@@ -15,13 +15,14 @@
     "grunt-contrib-imagemin": "^0.7.1",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-filerev": "^0.2.1",
-    "grunt-sass": "",
+    "grunt-sass": "~0.16.1",
     "grunt-sftp-deploy": "0.0.11",
     "grunt-usemin": "^2.2.0",
-    "load-grunt-tasks": "",
-    "node-bourbon": "",
+    "jit-grunt": "^0.9.0",
+    "load-grunt-tasks": "^1.0.0",
+    "node-bourbon": "^1.2.3",
     "time-grunt": "^0.3.2"
   }
 }

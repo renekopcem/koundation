@@ -4,7 +4,10 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     // Load all tasks
-    require('load-grunt-tasks')(grunt);
+    //require('load-grunt-tasks')(grunt);
+    require('jit-grunt')(grunt, {
+        useminPrepare: 'grunt-usemin'
+    });
 
     // Project configuration.
     grunt.initConfig({
@@ -18,7 +21,6 @@ module.exports = function(grunt) {
             options: {
                 includePaths: [
                     require('node-bourbon').includePaths,
-                    '<%= config.bowerComponentsPath %>/sass-list-maps',
                     '<%= config.bowerComponentsPath %>/foundation/scss'
                 ]
             },
