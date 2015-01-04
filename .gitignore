@@ -178,3 +178,6 @@ assets/bower_components/
 
 # NODE
 assets/node_modules/
+
+# Generated Documentation
+assets/docs/

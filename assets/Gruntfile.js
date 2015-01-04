@@ -140,6 +140,18 @@ module.exports = function(grunt) {
                 dest: '<%= config.cssPath %>/dist/f/',
                 expand: true
             }
+        },
+        styleguide: {
+            options: {
+                framework: {
+                    name: 'kss'
+                }
+            },
+            all: {
+                files: {
+                    'docs/styleguide': '<%= config.scssPath %>/**/*.{scss,sass}'
+                }
+            }
         }
     });
 
