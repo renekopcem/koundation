@@ -77,14 +77,25 @@ module.exports = function(grunt) {
             }
         },
         useminPrepare: {
-            html: '../index.html',
+            html: '../index_dev.html',
             options: {
                 root: '../',
-                dest: './'
+                dest: '../'
             }
         },
         usemin: {
-            html: '../index.min.html'
+            html: '../index.html',
+            options: {
+                assetsDirs: ['../', 'css/dist']
+            }
+        },
+        rev: {
+            files: {
+                src: [
+                    '<%= config.cssPath %>/dist/**/*.css',
+                    '<%= config.jsPath %>/dist/**/*.js'
+                ]
+            }
         },
         imagemin: {
             dynamic: {
@@ -128,6 +139,10 @@ module.exports = function(grunt) {
             }
         },
         copy: {
+            html: {
+                src: '../index_dev.html',
+                dest: '../index.html'
+            },
             cssimages: {
                 cwd: '<%= config.cssPath %>/i',
                 src: '**',
@@ -159,13 +174,14 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('build', [
         'clean:dist',
+        'copy:html',
         'sass:dist',
         'autoprefixer:dist',
         'useminPrepare',
         'concat',
         'cssmin',
         'uglify',
-        //'filerev',
+        'rev',
         'usemin',
         'copy:cssimages',
         'copy:cssfonts'
