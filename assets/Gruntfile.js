@@ -167,6 +167,18 @@ module.exports = function(grunt) {
                     'docs/styleguide': '<%= config.scssPath %>/**/*.{scss,sass}'
                 }
             }
+        },
+        webfont: {
+            icons: {
+                src: 'css/i/ico/*.svg',
+                dest: 'css/f/ico',
+                destCss: 'scss/base',
+                options: {
+                    stylesheet: 'scss',
+                    relativeFontPath: 'f/ico',
+                    htmlDemo: false
+                }
+            }
         }
     });
 
