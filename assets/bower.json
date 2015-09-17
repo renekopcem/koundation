@@ -1,19 +1,19 @@
 {
-  "name": "Koundation",
-  "version": "3.0.0",
-  "authors": [
-    "Roman Klos <roman.klos@kopcem.net>"
-  ],
-  "description": "Product of René Kopčem",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "foundation": "zurb/bower-foundation#~5.4.7"
-  }
+    "name": "Koundation",
+    "version": "3.0.0",
+    "authors": [
+        "Roman Klos <roman.klos@kopcem.net>"
+    ],
+    "description": "Product of René Kopčem",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "foundation": "zurb/bower-foundation#~5.5.2"
+    }
 }
