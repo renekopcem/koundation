@@ -20,7 +20,6 @@ module.exports = function(grunt) {
         sass: {
             options: {
                 includePaths: [
-                    require('node-bourbon').includePaths,
                     '<%= config.bowerComponentsPath %>/foundation/scss'
                 ]
             },
@@ -68,7 +67,8 @@ module.exports = function(grunt) {
                     watchTask: true,
                     server: {
                         baseDir: '<%= config.browsersync.baseDir %>'
-                    }/*
+                    }
+                    /*
                     host: '<%= config.browsersync.host %>',
                     proxy: '<%= config.browsersync.proxy %>',
                     hostnameSuffix: '<%= config.browsersync.hostnameSuffix %>'
@@ -110,21 +110,6 @@ module.exports = function(grunt) {
         jshint: {
             all: ['Gruntfile.js', '<%= config.jsPath %>/*.js']
         },
-        'sftp-deploy': {
-            build: {
-                //auth: {
-                //    host: 'server.com',
-                //    port: 22,
-                //    authKey: 'key1'
-                //},
-                //src: '/path/to/source/folder',
-                //dest: '/path/to/destination/folder',
-                //exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
-                //server_sep: '/',
-                //concurrency: 4,
-                //progress: true
-            }
-        },
         // Empties folders to start fresh
         clean: {
             dist: {
@@ -154,18 +139,6 @@ module.exports = function(grunt) {
                 src: '**',
                 dest: '<%= config.cssPath %>/dist/f/',
                 expand: true
-            }
-        },
-        styleguide: {
-            options: {
-                framework: {
-                    name: 'kss'
-                }
-            },
-            all: {
-                files: {
-                    'docs/styleguide': '<%= config.scssPath %>/**/*.{scss,sass}'
-                }
             }
         },
         webfont: {
