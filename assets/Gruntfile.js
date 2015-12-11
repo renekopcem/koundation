@@ -16,11 +16,26 @@ module.exports = function(grunt) {
             files: '<%= config.scssPath %>/**/*.scss',
             tasks: ['sass:dev', 'autoprefixer:dev']
         },
+        browserify: {
+            dev: {
+                files: {
+                    '<%= config.jsPath %>/app.js': ['<%= config.jsPath %>/src/main.js'],
+                },
+                options: {
+                    watch : true, // use watchify for incremental builds!
+                    //keepAlive : true, // watchify will exit unless task is kept alive
+                    browserifyOptions: {
+                        debug: true
+                    },
+                    transform: [['babelify', { "presets": ["es2015"] }]]
+                }
+            }
+        },
         concat: {
             options: {
                 separator: ';'
             },
-            script: {
+            vendor: {
                 src: [
                     // '<%= config.nodeModulesPath %>/foundation-sites/node_modules/jquery/dist/jquery.js',
                     // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.core.js',
@@ -30,9 +45,15 @@ module.exports = function(grunt) {
                     // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.util.touch.js',
                     // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.orbit.js',
                     // Add other Foundation modules if needed
-                    '<%= config.jsPath %>/src/main.js'
                 ],
-                dest: '<%= config.jsPath %>/app.js'
+                dest: '<%= config.jsPath %>/vendor.js'
+            },
+            dist: {
+                src: [
+                    '<%= config.jsPath %>/vendor.js',
+                    '<%= config.jsPath %>/app.js'
+                ],
+                dest: '<%= config.jsPath %>/dist/app.js'
             }
         },
         sass: {
@@ -78,6 +99,7 @@ module.exports = function(grunt) {
                 bsFiles: {
                     src: [
                         '<%= config.cssPath %>/screen.css',
+                        '<%= config.jsPath %>/app.js',
                         '../*.html'
                     ]
                 },
@@ -174,7 +196,7 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['browserSync', 'browserify:dev', 'watch']);
     grunt.registerTask('build', [
         'clean:dist',
         'copy:html',
