@@ -3,6 +3,7 @@
     "cssPath": "./css",
     "jsPath": "./js",
     "bowerComponentsPath": "./bower_components",
+    "nodeModulesPath": "./node_modules",
     "browsersync": {
         "baseDir": "../",
         "host": "server.dev.0.0.0.0",
