@@ -59,7 +59,8 @@ module.exports = function(grunt) {
         sass: {
             options: {
                 includePaths: [
-                    '<%= config.bowerComponentsPath %>/foundation/scss'
+                    '<%= config.nodeModulesPath %>/foundation-sites/scss',
+                    '<%= config.nodeModulesPath %>/motion-ui/src'
                 ]
             },
             dist: {
