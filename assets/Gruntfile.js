@@ -16,6 +16,25 @@ module.exports = function(grunt) {
             files: '<%= config.scssPath %>/**/*.scss',
             tasks: ['sass:dev', 'autoprefixer:dev']
         },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            script: {
+                src: [
+                    // '<%= config.nodeModulesPath %>/foundation-sites/node_modules/jquery/dist/jquery.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.core.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.util.keyboard.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.util.motion.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.util.timerAndImageLoader.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.util.touch.js',
+                    // '<%= config.nodeModulesPath %>/foundation-sites/js/foundation.orbit.js',
+                    // Add other Foundation modules if needed
+                    '<%= config.jsPath %>/src/main.js'
+                ],
+                dest: '<%= config.jsPath %>/app.js'
+            }
+        },
         sass: {
             options: {
                 includePaths: [
