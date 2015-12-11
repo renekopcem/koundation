@@ -68,9 +68,7 @@ module.exports = function(grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    '<%= config.cssPath %>/screen.css': '<%= config.scssPath %>/screen.scss',
-                    '<%= config.cssPath %>/screen-ie.css': '<%= config.scssPath %>/screen-ie.scss',
-                    '<%= config.cssPath %>/print.css': '<%= config.scssPath %>/print.scss'
+                    '<%= config.cssPath %>/vendor.css': '<%= config.scssPath %>/vendor.scss'
                 }
             },
             dev: {
@@ -78,10 +76,27 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    '<%= config.cssPath %>/screen.css': '<%= config.scssPath %>/screen.scss',
-                    '<%= config.cssPath %>/screen-ie.css': '<%= config.scssPath %>/screen-ie.scss',
-                    '<%= config.cssPath %>/print.css': '<%= config.scssPath %>/print.scss'
+                    '<%= config.cssPath %>/vendor.css': '<%= config.scssPath %>/vendor.scss'
                 }
+            }
+        },
+        postcss: {
+            options: {
+                map: {
+                    inline: false,
+                    annotation: '<%= config.cssPath %>/'
+                },
+                parser: require('postcss-scss'),
+                processors: [
+                    require('precss')(),
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
+            },
+            dist: {
+                src: '<%= config.cssPath %>/src/screen.css',
+                dest: '<%= config.cssPath %>/screen.css'
             }
         },
         autoprefixer: {
