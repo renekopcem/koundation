@@ -4,7 +4,6 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     // Load all tasks
-    //require('load-grunt-tasks')(grunt);
     require('jit-grunt')(grunt, {
         useminPrepare: 'grunt-usemin'
     });
