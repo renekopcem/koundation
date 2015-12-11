@@ -2,7 +2,6 @@
     "scssPath": "./scss",
     "cssPath": "./css",
     "jsPath": "./js",
-    "bowerComponentsPath": "./bower_components",
     "nodeModulesPath": "./node_modules",
     "browsersync": {
         "baseDir": "../",
