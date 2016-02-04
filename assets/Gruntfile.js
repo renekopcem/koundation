@@ -13,8 +13,11 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         config: grunt.file.readJSON('config.json'),
         watch: {
-            files: '<%= config.scssPath %>/**/*.scss',
-            tasks: ['sass:dev', 'autoprefixer:dev']
+            files: [
+                '<%= config.scssPath %>/**/*.scss',
+                '<%= config.cssSrcPath %>/**/*.css'
+            ],
+            tasks: ['sass:dev', 'postcss:dist', 'autoprefixer:dev']
         },
         browserify: {
             dev: {

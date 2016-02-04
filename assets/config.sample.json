@@ -1,6 +1,7 @@
 {
     "scssPath": "./scss",
     "cssPath": "./css",
+    "cssSrcPath": "./css/src",
     "jsPath": "./js",
     "nodeModulesPath": "./node_modules",
     "browsersync": {
